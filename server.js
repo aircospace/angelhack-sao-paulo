@@ -27,6 +27,7 @@ var routes = {};
 routes.router = require(__dirname + '/router.js')(express, routes);
 
 routes.middlewares = {};
+routes.middlewares.message = require(__dirname + '/middlewares/message.js')(controllers.message);
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
