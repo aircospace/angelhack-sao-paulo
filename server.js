@@ -14,6 +14,10 @@ mongoose.connect(process.env.MONGODB, {
 });
 mongoose.connection.once('Connection error', console.error);
 
+// Get all schema
+var schemas = {};
+schemas.message = require(__dirname + '/models/message.js')(mongoose);
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
