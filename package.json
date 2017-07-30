@@ -1,0 +1,21 @@
+{
+    "name": "AngelHack",
+    "description": "This is AngelHack São Paulo",
+    "author": "Victor Shinya <contato@victorshinya.com.br>",
+    "version": "0.0.1",
+    "license": "Apache-2.0",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "engines": {
+        "node": "ˆ8.x",
+        "npm": "ˆ5.x"
+    },
+    "dependencies": {
+        "body-parser": "^1.17.2",
+        "dotenv": "^4.0.0",
+        "express": "^4.15.3",
+        "mongoose": "^4.11.1"
+    }
+}
