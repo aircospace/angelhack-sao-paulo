@@ -9,7 +9,7 @@ module.exports = (schemas) => {
                 return res.json({ success: false, message: 'Invalid message' });
             } else  {
                 const query = { message: message };
-                User.findOne(query, (error, result) => {
+                Message.findOne(query, (error, result) => {
                     if (error) return res.json({ success: false, message: error });
                     if (!result) {
                         return res.json({ success: false, message: 'Message not found' });
