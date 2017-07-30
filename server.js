@@ -17,7 +17,6 @@ mongoose.connection.once('Connection error', console.error);
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-routes.router(app);
 
 return http.createServer(app).listen(process.env.PORT || 3000, () => {
     console.log(`Server running at port 3000`);
