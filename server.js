@@ -18,9 +18,16 @@ mongoose.connection.once('Connection error', console.error);
 var schemas = {};
 schemas.message = require(__dirname + '/models/message.js')(mongoose);
 
+// Get all routes
+var routes = {};
+routes.router = require(__dirname + '/router.js')(express, routes);
+
+routes.middlewares = {};
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+routes.router(app);
 
 return http.createServer(app).listen(process.env.PORT || 3000, () => {
     console.log(`Server running at port 3000`);
