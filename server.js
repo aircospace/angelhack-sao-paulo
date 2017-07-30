@@ -18,6 +18,10 @@ mongoose.connection.once('Connection error', console.error);
 var schemas = {};
 schemas.message = require(__dirname + '/models/message.js')(mongoose);
 
+// Get all controllers
+var controllers = {};
+controllers.message = require(__dirname + '/controllers/message.js')(schemas);
+
 // Get all routes
 var routes = {};
 routes.router = require(__dirname + '/router.js')(express, routes);
