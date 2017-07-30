@@ -24,9 +24,9 @@ module.exports = (schemas) => {
             if (!message) {
                 return res.json({ success: false, message: 'Invalid message' });
             } else {
-                var message = new Message();
-                message.message = message;
-                message.save(error => {
+                var mes = new Message();
+                mes.message = message;
+                mes.save(error => {
                     if (error) return res.json({ success: false, message: 'Failed to register a new message' });
                     return res.json({ success: true, message: 'Success' });
                 });
